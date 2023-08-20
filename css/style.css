@@ -20,3 +20,24 @@ body {
 #game-canvas {
     image-rendering: pixelated;
 }
+
+.mobile-button-container {
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: none;
+}
+
+.mobile-button-container > button {
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .mobile-button-container {
+        display: grid;
+    }
+}

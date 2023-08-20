@@ -448,6 +448,16 @@ function drawTextMiddle(text, size=40, opacity=0.2, lineOffset=0, font="serif") 
 window.addEventListener("keydown", event => keysDown.add(event.key))
 window.addEventListener("keyup", event => keysDown.delete(event.key))
 
+const leftBtn = document.querySelector("#left-btn")
+const rightBtn = document.querySelector("#right-btn")
+const shootBtn = document.querySelector("#shoot-btn")
+
+leftBtn.addEventListener("touchstart", () => keysDown.add("ArrowLeft"))
+leftBtn.addEventListener("touchend", () => keysDown.delete("ArrowLeft"))
+rightBtn.addEventListener("touchstart", () => keysDown.add("ArrowRight"))
+rightBtn.addEventListener("touchend", () => keysDown.delete("ArrowRight"))
+shootBtn.addEventListener("touchstart", () => keysDown.add(" "))
+
 function spawnEnemy() {
     let sideIndex = Math.floor(Math.random() * 4)
 
